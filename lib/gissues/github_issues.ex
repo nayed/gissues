@@ -1,5 +1,8 @@
 defmodule Gissues.GithubIssues do
   @user_agent [ {"User-agent", "Nayed nayed.saidali@gmail.com"} ]
+
+  # use a module attribute to fetch the value at compile time
+  @github_url Application.get_env(:gissues, :github_url)
   
   def fetch(user, project) do
     issues_url(user, project)
@@ -8,14 +11,14 @@ defmodule Gissues.GithubIssues do
   end
 
   def issues_url(user, project) do
-    "https://api.github.com/repos/#{user}/#{project}/issues"
+    "#{@github_url}/repos/#{user}/#{project}/issues"
   end
 
   def handle_reponse({ :ok, %{status_code: 200, body: body}}) do
-    { :ok, body }
+    { :ok, Poison.Parser.parse!(body) }
   end
 
   def handle_reponse({ _, %{status_code: _, body: body}}) do
-    { :error, body }
+    { :error, Poison.Parser.parse!(body) }
   end
 end
