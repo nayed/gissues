@@ -1,6 +1,8 @@
 # Gissues
 
-Display open Github issues sorted by the oldest.
+> Display open Github issues sorted by the oldest.
+
+[![Build Status](https://travis-ci.org/nayed/gissues.svg?branch=master)](https://travis-ci.org/nayed/gissues)
 
 ## Usage
 ```
