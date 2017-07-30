@@ -36,7 +36,10 @@ defmodule Gissues.CLI do
 
   def process(:help) do
     IO.puts """
-    usage: issues <user> <project> [ count | #{@default_count} ]
+    Usage: gissues <user> <project> [ count | #{@default_count} ]
+
+    Options:
+    -h, --help        show this help message and exit
     """
     System.halt(0)
   end
