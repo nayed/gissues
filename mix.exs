@@ -28,6 +28,7 @@ defmodule Gissues.Mixfile do
       {:earmark, "~> 1.2"},
       {:ex_doc, "~> 0.16.2"},
       {:httpoison, "~> 0.12"},
+      {:inch_ex, only: :docs},
       {:poison, "~> 3.1"}
     ]
   end
