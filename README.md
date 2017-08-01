@@ -25,3 +25,6 @@ mix escript.build
 ```
 
 This will create the `gissues` executable file in the `bin` directory
+
+### Documentation
+[API documentation](doc/index.html)

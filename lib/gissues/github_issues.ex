@@ -1,5 +1,7 @@
 defmodule Gissues.GithubIssues do
-
+  @moduledoc """
+  Fetch Github issues
+  """
   require Logger
 
   @user_agent [ {"User-agent", "Nayed nayed.saidali@gmail.com"} ]

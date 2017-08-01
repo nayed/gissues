@@ -1,4 +1,8 @@
 defmodule Gissues.TableFormatter do
+  @moduledoc """
+  Format data in a table-like format
+  """
+
   import Enum, only: [ each: 2, map: 2, map_join: 3, max: 1 ]
 
   @doc """
