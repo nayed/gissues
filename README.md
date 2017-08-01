@@ -27,4 +27,4 @@ mix escript.build
 This will create the `gissues` executable file in the `bin` directory
 
 ### Documentation
-[API documentation](doc/index.html)
+[API documentation](https://nayed.github.io/gissues/doc/api-reference.html)
