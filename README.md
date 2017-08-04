@@ -6,22 +6,23 @@
 [![Inline docs](http://inch-ci.org/github/nayed/gissues.svg?branch=master)](http://inch-ci.org/github/nayed/gissues)
 
 ## Usage
-```
-bin/gissues <user> <project> [ count | 4 ]
+```console
+$ bin/gissues <user> <project> [ count | 4 ]
 
 Options:
--h, --help      show this help message and exit
+-h, --help        show this help message and exit
+-v, --version     show gissues' version
 ```
 
 ![](demo.gif)
 
 ## Installation
 Assuming you have [elixir](http://elixir-lang.org) install:
-```
-git clone https://github.com/nayed/gissues.git
-cd gissues
-mix deps.get
-mix escript.build
+```console
+$ git clone https://github.com/nayed/gissues.git
+$ cd gissues
+$ mix deps.get
+$ mix escript.build
 ```
 
 This will create the `gissues` executable file in the `bin` directory

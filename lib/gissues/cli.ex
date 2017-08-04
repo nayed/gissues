@@ -41,6 +41,7 @@ defmodule Gissues.CLI do
 
     Options:
     -h, --help        show this help message and exit
+    -v, --version     show gissues' version
     """
     System.halt(0)
   end
