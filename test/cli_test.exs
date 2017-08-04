@@ -4,6 +4,11 @@ defmodule CliTest do
 
   import Gissues.CLI, only: [ parse_args: 1, sort_into_ascending_order: 1 ]
 
+  test ":version returned by option parsing with -v and --version options" do
+    assert parse_args(["-v",     "anything"]) == :version
+    assert parse_args(["--version", "anything"]) == :version
+  end
+
   test ":help returned by option parsing with -h and --help options" do
     assert parse_args(["-h",     "anything"]) == :help
     assert parse_args(["--help", "anything"]) == :help

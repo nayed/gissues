@@ -24,10 +24,11 @@ defmodule Gissues.CLI do
   or `:help` if help was given.
   """
   def parse_args(argv) do
-    parse = OptionParser.parse(argv, switches: [ help: :boolean],
-                                     aliases:  [ h:    :help   ])
+    parse = OptionParser.parse(argv, switches: [ help: :boolean, version: :boolean ],
+                                     aliases:  [ h:    :help,    v:       :version ])
     case parse do
       { [ help: true ], _, _ } -> :help
+      { [ version: true ], _, _ } -> :version
       { _, [ user, project, count ], _ } -> { user, project, String.to_integer(count) }
       { _, [ user, project ], _ } -> { user, project, @default_count }
       _ -> :help
@@ -41,6 +42,15 @@ defmodule Gissues.CLI do
     Options:
     -h, --help        show this help message and exit
     """
+    System.halt(0)
+  end
+
+  def process(:version) do
+    {:ok, version} = :application.get_key(:gissues, :vsn)
+    version
+    |> List.to_string
+    |> IO.puts
+    
     System.halt(0)
   end
 
